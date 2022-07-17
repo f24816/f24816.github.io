@@ -2,18 +2,19 @@
 #![allow(unused_variables)]
 #![allow(unused_imports)]
 
-use debug_print::debug_print;
-use colored::*;
-use std::fs::File;
-use std::io::prelude::*;
+
 use pulldown_cmark::{html, Parser};
+use debug_print::debug_print;
+use std::io::prelude::*;
+use std::fs::File;
+use colored::*;
 
 mod breaking;
 
 fn main() {
 
     // open file
-    let mut file = File::open("example.txt")
+    let mut file = File::open("dummy.md")
         .expect("File not found")
     ;
 
