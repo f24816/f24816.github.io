@@ -3,10 +3,12 @@
 #![allow(unused_imports)]
 
 use debug_print::debug_print;
-use colored::Colorize;
+use colored::*;
 use std::fs::File;
 use std::io::prelude::*;
 use pulldown_cmark::{html, Parser};
+
+mod breaking;
 
 fn main() {
 
@@ -33,19 +35,28 @@ fn main() {
         println!("{}", data_srt_vector[i]);
     }
 
-    // debuging
-    println!("Number of lines: {}", data_srt_vector.len());
-    println!("Number of \"!\" : {}", data_srt_vector.concat().matches("!").count());
 
 
-    // testing
+
+    // litle bird is here to wish a good day
+    print!("-----🐦-----\n");
 
     let parser = Parser::new(data_lf.as_str());
     let mut html_buf = String::new();
     html::push_html(&mut html_buf, parser);
 
-    std::fs::write("write_test.txt", data_lf).expect("Unable to write file");
+    // write to file
+    std::fs::write("write_test.html", &html_buf).expect("Unable to write file");
 
-    print!("{}", &html_buf);
+    let html_buf_vector: Vec<&str> = html_buf.split("\n").collect();
+
+    // breaking mod
+    breaking::breaking(html_buf_vector);
+
+
+    // debuging
+    println!("{}{}", "\nNumber of lines: ".green(), data_srt_vector.len());
+    println!("{}{}", "Number of \"!\" : ".green(), data_srt_vector.concat().matches("!").count());
+    println!("{}{}", "Does it contain a list: ".green(), html_buf.contains("<li>"));
 
 }
