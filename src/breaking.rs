@@ -8,7 +8,12 @@ pub fn breaking(input: Vec<&str>) {
     for i in 0..input.len() {
 
         let x: String = input[i].to_string();
+    /*
+    if <p>
 
+
+
+    */
         if input[i].contains("<p"){
             if input[i].contains("/p>"){
                 let xx: String = x.clone();

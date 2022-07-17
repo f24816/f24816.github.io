@@ -26,17 +26,9 @@ fn main() {
     ;
 
     // crlf conversion
-    let data_lf = data.replace("\r\n", "<br>\n");
+    let data_lf = data.replace("\r\n", "\n");
     // split all the lines and put them inside a vector
     let data_srt_vector: Vec<&str> = data_lf.split("\n").collect();
-
-    // debug - printing all lines
-    for i in 0..data_srt_vector.len() {
-        println!("{}", data_srt_vector[i]);
-    }
-
-
-
 
     // litle bird is here to wish a good day
     print!("-----🐦-----\n");
@@ -44,6 +36,9 @@ fn main() {
     let parser = Parser::new(data_lf.as_str());
     let mut html_buf = String::new();
     html::push_html(&mut html_buf, parser);
+
+    //debug_print!("{}", data_lf);
+    debug_print!("{}{}", "converted HTML:".red() ,html_buf);
 
     // write to file
     std::fs::write("write_test.html", &html_buf).expect("Unable to write file");

@@ -13,8 +13,10 @@
 - dogs
 - cat
 
+
+*Your first rust program*
 ```
 fn main() {
-    // hello world
+    println!("Hello World");
 }
 ```
