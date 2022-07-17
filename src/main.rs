@@ -46,9 +46,12 @@ fn main() {
 
     let html_buf_vector: Vec<&str> = html_buf.split("\n").collect();
 
+    // for i in 0..html_buf_vector.len() {
+    //     println!("{}", html_buf_vector[i]);
+    // }
+
     // breaking mod
     breaking::breaking(html_buf_vector);
-
 
     // debuging
     println!("{}{}", "\nNumber of lines: ".green(), data_srt_vector.len());
