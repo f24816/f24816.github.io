@@ -1,5 +1,7 @@
 # f24816's Markdown Compiler Tweaked
 
 ### TODO
-- debuging *breaking.rs* if else statements
+
+- [ ] cleaning *breaking.rs* if else statements
+- [ ] no *new line* characters after conversion
 

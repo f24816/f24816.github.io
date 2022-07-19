@@ -9,7 +9,7 @@ use std::io::prelude::*;
 use std::fs::File;
 use colored::*;
 
-mod breaking;
+mod breaking_up;
 
 fn main() {
 
@@ -51,7 +51,7 @@ fn main() {
     // }
 
     // breaking mod
-    breaking::breaking(html_buf_vector);
+    breaking_up::main(html_buf_vector);
 
     // debuging
     println!("{}{}", "\nNumber of lines: ".green(), data_srt_vector.len());

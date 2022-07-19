@@ -1,7 +1,7 @@
 use pulldown_cmark::html;
 use colored::*;
 
-pub fn breaking(input: Vec<&str>) {
+pub fn main(input: Vec<&str>) {
 
     let mut output: Vec<String> = Vec::new();
     let mut br = false;
@@ -54,6 +54,7 @@ pub fn breaking(input: Vec<&str>) {
                     let mut xx: String = x.clone();
                     xx.push_str("<br>");
                     print!("{}{}\n", "brake was true: ".red(), &xx);
+                    output.push(xx);
                 }
                 if br == false{
                     print!("{}{}\n", "continue: ".red(), &xx);
@@ -66,9 +67,12 @@ pub fn breaking(input: Vec<&str>) {
 
     // 4 debuging
     for i in 0..output.len() {
-        ////print!("{}\n", output[i]);
+        //print!("{}\n", output[i]);
     }
+    print!("{}", output.join("\n"));
+    let testing = output.join("\n");
 
-    std::fs::write("write_test.html", output.concat()).expect("Unable to write file");
+    //std::fs::write("write_test.html", output.concat()).expect("Unable to write file");
+    std::fs::write("write_test.html", testing).expect("Unable to write file");
 
 }
