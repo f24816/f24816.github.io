@@ -8,5 +8,8 @@ edition = "2021"
 [dependencies]
 debug_print = "1.0.0"
 colored = "2.0.0"
-nom = "7.1.1"
+# nom = "7.1.1"
 pulldown-cmark = "0.9.1"
+
+[profile.release]
+debug = 1

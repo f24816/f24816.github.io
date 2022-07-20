@@ -14,7 +14,7 @@ mod breaking_up;
 fn main() {
 
     // open file
-    let mut file = File::open("dummy.md")
+    let mut file = File::open("longer_dummy.md")
         .expect("File not found")
     ;
 
@@ -32,7 +32,7 @@ fn main() {
     let data_srt_vector: Vec<&str> = data_lf.split("\n").collect();
 
     // litle bird is here to wish a good day
-    print!("-----🐦-----\n");
+    debug_print!("-----🐦-----\n");
 
     let parser = Parser::new(data_lf.as_str());
     let mut html_buf = String::new();
@@ -54,8 +54,8 @@ fn main() {
     breaking_up::main(html_buf_vector);
 
     // debuging
-    println!("{}{}", "\nNumber of lines: ".green(), data_srt_vector.len());
-    println!("{}{}", "Number of \"!\" : ".green(), data_srt_vector.concat().matches("!").count());
-    println!("{}{}", "Does it contain a list: ".green(), html_buf.contains("<li>"));
+    debug_print!("{}{}", "\nNumber of lines: ".green(), data_srt_vector.len());
+    debug_print!("{}{}", "Number of \"!\" : ".green(), data_srt_vector.concat().matches("!").count());
+    debug_print!("{}{}", "Does it contain a list: ".green(), html_buf.contains("<li>"));
 
 }

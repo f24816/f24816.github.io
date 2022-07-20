@@ -3,5 +3,7 @@
 ### TODO
 
 - [ ] cleaning *breaking.rs* if else statements
-- [ ] no *new line* characters after conversion
+- [x] no *new line* characters after conversion
+- [ ] adding *args* to the executable
+- [ ] looking into adding *multithreading*
 

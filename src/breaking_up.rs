@@ -1,78 +1,54 @@
+use debug_print::debug_print;
 use pulldown_cmark::html;
-use colored::*;
 
 pub fn main(input: Vec<&str>) {
 
     let mut output: Vec<String> = Vec::new();
-    let mut br = false;
+    let mut adding_break = false;
 
     for i in 0..input.len() {
 
         let x: String = input[i].to_string();
-    /*
 
-    if <p>
-        and </p>
-            null
-        else
-            brake
-    else
-        if </p>
-            null
-        if br = true
-            brake
-        else
-            null
-
-    */
         if input[i].contains("<p>"){
             if input[i].contains("/p>"){
                 let xx: String = x.clone();
-                print!("{}{}\n", "<p></p> was found: ".red(), &xx);
+                debug_print!("{}{}\n", "<p></p> was found: ", &xx);
                 output.push(xx);
-                br = false;
+                adding_break = false;
             } else {
                 // add <br>
                 let mut xx: String = x.clone();
                 xx.push_str("<br>");
-                print!("{}{}\n", "<p> was found: ".red(), &xx);
+                debug_print!("{}{}\n", "<p> was found: ", &xx);
                 output.push(xx);
-                br = true;
+                adding_break = true;
             }
         } else {
             if input[i].contains("/p>"){
                 let xx: String = x.clone();
-                print!("{}{}\n", "</p> was found: ".red(), &xx);
+                debug_print!("{}{}\n", "</p> was found: ", &xx);
                 output.push(xx);
-                br = false;
+                adding_break = false;
 
             }
             else {
                 let xx: String = x.clone();
 
-                if br == true{
+                if adding_break == true{
                     let mut xx: String = x.clone();
                     xx.push_str("<br>");
-                    print!("{}{}\n", "brake was true: ".red(), &xx);
+                    debug_print!("{}{}\n", "brake was true: ", &xx);
                     output.push(xx);
                 }
-                if br == false{
-                    print!("{}{}\n", "continue: ".red(), &xx);
+                if adding_break == false{
+                    debug_print!("{}{}\n", "continue: ", &xx);
                     output.push(xx);
                 }
             }
         }
     }
 
-
-    // 4 debuging
-    for i in 0..output.len() {
-        //print!("{}\n", output[i]);
-    }
-    print!("{}", output.join("\n"));
-    let testing = output.join("\n");
-
-    //std::fs::write("write_test.html", output.concat()).expect("Unable to write file");
-    std::fs::write("write_test.html", testing).expect("Unable to write file");
+    std::fs::write("write_test.html", output.join("\n")).expect("Unable to write file");
 
 }
