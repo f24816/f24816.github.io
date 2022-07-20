@@ -17,6 +17,8 @@
 
 -----🐦-----
 
+## Title
+
 *Hello World in Rust*
 
 ```
@@ -24,9 +26,30 @@ fn main() {
     println!("Hello World");
 }
 ```
+> ⚠️ this is not a drill
+
+---
+
 &#35; &#1234; &#992; &#0;
 →Aa 3φ«
 
-&copy
+This number is so big it goes off screen.
 
----
+123456789. ok
+
+
+This will render as a list.
+1. hello
+
+I need to buy
+- new shoes
+- a coat
+- a plane ticket
+
+5\*6\*78
+
+##### Normal Heading
+
+::4 Better Heading
+
+Hello
