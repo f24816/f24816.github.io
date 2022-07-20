@@ -1,6 +1,6 @@
 use colored::*;
 
-pub fn main(input: String) -> String {
+pub fn main(input: &String) -> String {
 
     let input_vector: Vec<&str> = input.split("\n").collect();
     let mut output: Vec<String> = Vec::new();
@@ -11,13 +11,22 @@ pub fn main(input: String) -> String {
 
         if current_line.starts_with("::"){
 
-            let num : usize = current_line.as_str().chars().nth(2).unwrap() as usize - 0x30;
-            let prefix : String = format!("{}{}", "::", num);
+            let value: char = current_line.as_str().chars().nth(2).unwrap();
 
-            let x = format!("{:#<1$}", "", num);
+            match value {
+                '4' => println!("Heading!"),
+                '1' => print!("Heading!"),
+                _ => println!("Nothing!"),
+            }
+            // use push('!')
 
-            let converted_line: String = current_line.clone().replace(prefix.as_str(), &x);
-            output.push(converted_line);
+            // let num : usize = &current_line.as_str().chars().nth(2).unwrap() as usize - 0x30; // here .unwrap() works as intended
+            // let prefix : String = format!("{}{}", "::", num);
+            // let replacement = format!("{:#<1$}", "", num);
+
+            // let converted_line: String = current_line.clone().replace(prefix.as_str(), &replacement);
+
+            //output.push(converted_line);
         } else {
             output.push(current_line);
         }

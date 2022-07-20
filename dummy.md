@@ -10,14 +10,17 @@
 7 To tell your name the livelong day
 8 To an admiring bog!
 
-[google.com](https://www.google.com)
+# Title
+## Subtitle
 
+[link](https://www.google.com)
+
+Lists
 - dogs
 - cats
 
 -----🐦-----
 
-## Title
 
 *Hello World in Rust*
 
@@ -29,27 +32,23 @@ fn main() {
 > ⚠️ this is not a drill
 
 ---
+## Worst Case Scenario
 
 &#35; &#1234; &#992; &#0;
 →Aa 3φ«
+5\*6\*78
 
 This number is so big it goes off screen.
 
 123456789. ok
 
+![foo](https://64.media.tumblr.com/8b0c04a743872af43a40b6e61e23fc1f/tumblr_nowuoxVukk1s0jr9fo1_500.gifv "title")
 
-This will render as a list.
-1. hello
-
-I need to buy
-- new shoes
-- a coat
-- a plane ticket
-
-5\*6\*78
 
 ##### Normal Heading
 
 ::4 Better Heading
+
+::a Error Handling
 
 Hello

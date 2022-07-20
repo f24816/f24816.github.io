@@ -1,7 +1,7 @@
 use debug_print::debug_print;
 use pulldown_cmark::html;
 
-pub fn main(input: Vec<&str>) {
+pub fn main(input: &Vec<&str>) {
 
     let mut output: Vec<String> = Vec::new();
     let mut adding_break = false;
