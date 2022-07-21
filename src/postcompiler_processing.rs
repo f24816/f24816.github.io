@@ -14,20 +14,20 @@ pub fn main(input: &Vec<&str>) {
         if input[i].contains("<p>"){
             if input[i].contains("/p>"){
                 let converted_line: String = current_line.clone();
-                debug_print!("{}{}\n", "<p></p> was found: ", &converted_line);
+                //debug_print!("{}{}\n", "<p></p> was found: ", &converted_line);
                 output.push(converted_line);
                 adding_break = false;
             } else {
                 let mut converted_line: String = current_line.clone();
                 converted_line.push_str("<br>");
-                debug_print!("{}{}\n", "<p> was found: ", &converted_line);
+                //debug_print!("{}{}\n", "<p> was found: ", &converted_line);
                 output.push(converted_line);
                 adding_break = true;
             }
         } else {
             if input[i].contains("/p>"){
                 let converted_line: String = current_line.clone();
-                debug_print!("{}{}\n", "</p> was found: ", &converted_line);
+                //debug_print!("{}{}\n", "</p> was found: ", &converted_line);
                 output.push(converted_line);
                 adding_break = false;
 
@@ -38,11 +38,11 @@ pub fn main(input: &Vec<&str>) {
                 if adding_break == true{
                     let mut converted_line: String = current_line.clone();
                     converted_line.push_str("<br>");
-                    debug_print!("{}{}\n", "brake was true: ", &converted_line);
+                    //debug_print!("{}{}\n", "brake was true: ", &converted_line);
                     output.push(converted_line);
                 }
                 if adding_break == false{
-                    debug_print!("{}{}\n", "continue: ", &converted_line);
+                    //debug_print!("{}{}\n", "continue: ", &converted_line);
                     output.push(converted_line);
                 }
             }

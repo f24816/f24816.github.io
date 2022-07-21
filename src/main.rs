@@ -9,17 +9,19 @@ use std::env;
 use colored::*; // felt cute, might delete later
 
 mod postcompiler_processing;
-mod precompiler_processing;
+mod macro_processing;
 
 fn main() {
 
+    // ⚠️ cli arguments
+    // under construction
     let args: Vec<String> = env::args().collect();
 
     for argument in args.iter() {
         debug_print!("{}\n", argument);
     }
 
-    let path = std::env::args().nth(2).expect("no path given");
+    let path = std::env::args().nth(1).expect("no path given");
 
     // opening file
     let mut file = File::open(path)
@@ -36,14 +38,14 @@ fn main() {
     let data_lf_converted = data.replace("\r\n", "\n");
 
     // processing before HTML conversion
-    let data_processed: String = precompiler_processing::main(&data_lf_converted);
+    let data_processed: String = macro_processing::main(&data_lf_converted);
 
     // parsing markdown file using `pulldown_cmark`
     let mut data_html_converted = String::new();
     let parser = Parser::new(data_processed.as_str());
     html::push_html(&mut data_html_converted, parser);
 
-    debug_print!("{}{}", "converted HTML:".red() ,data_html_converted);
+    //debug_print!("{}{}", "converted HTML:".red() ,data_html_converted);
 
     // processing after HTML conversion
     let data_html_converted_vector: Vec<&str> = data_html_converted.split("\n").collect();
