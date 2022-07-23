@@ -24,7 +24,7 @@ Lists
 
 *Hello World in Rust*
 
-```
+```rust
 fn main() {
     println!("Hello World");
 }
@@ -52,4 +52,4 @@ This number is so big it goes off screen.
 ::ab Error Handling
 
 
-Hello
+Hello Changes

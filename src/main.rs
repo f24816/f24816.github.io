@@ -4,7 +4,9 @@
 use pulldown_cmark::{html, Parser};
 use debug_print::debug_print;
 use std::io::prelude::*;
+use filetime::FileTime;
 use std::fs::File;
+use std::fs;
 use std::env;
 use colored::*; // felt cute, might delete later
 
@@ -13,15 +15,14 @@ mod macro_processing;
 
 fn main() {
 
-    // ⚠️ cli arguments
-    // under construction
+    // command line arguments
     let args: Vec<String> = env::args().collect();
-
-    for argument in args.iter() {
-        debug_print!("{}\n", argument);
-    }
-
     let path = std::env::args().nth(1).expect("no path given");
+
+    // last modified date
+    let metadata = fs::metadata(&path).unwrap();
+    let mtime = FileTime::from_last_modification_time(&metadata);
+    println!("{}", mtime.unix_seconds());
 
     // opening file
     let mut file = File::open(path)
