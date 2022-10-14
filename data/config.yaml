@@ -1,0 +1,27 @@
+name: Andrei
+enableToc: true
+openToc: false
+enableLinkPreview: true
+enableLatex: true
+enableCodeBlockTitle: true
+enableCodeBlockCopy: true
+enableCallouts: true
+enableSPA: true
+enableFooter: true
+enableContextualBacklinks: true
+enableRecentNotes: false
+enableGitHubEdit: true
+GitHubLink: https://github.com/f24816/f24816.github.io/content
+enableSemanticSearch: false
+operandApiKey: ""
+description:
+  This website is a work in progress.
+page_title:
+  "☃️ Andrei (f24816)"
+links:
+  - link_name: Instagram
+    link: https://www.instagram.com/f24816/
+  - link_name: YouTube
+    link: https://www.youtube.com/channel/UCql8CkjkDIvP6soHeaq-RqA
+  - link_name: Github
+    link: https://github.com/f24816
