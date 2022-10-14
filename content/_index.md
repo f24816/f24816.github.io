@@ -3,4 +3,5 @@ title: Andrei (f24816)
 enableToc: false
 ---
 
-Hello [[notes/My first note]]
+Hello World
+[[notes/My first note]]
