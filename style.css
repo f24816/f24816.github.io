@@ -78,23 +78,23 @@ h1 {
 
 .date {
   color: #878787;
-  font-family: "Alata" Medium;
   padding-top: 8px;
   padding-bottom: 8px;
+  font-family: Inter;
   font-size: .9rem;
 }
 
 li > p {
-  font-family: "Alata" Medium;
   margin: 0;
   padding-left: 20px;
   padding-right: 20px;
+  font-family: Alata;
   font-size: 1.5rem;
   font-weight: 500;
 }
 
 li > p > a {
-  font-family: "Alata" Medium;
+  font-family: Alata;
 }
 
 main li {
